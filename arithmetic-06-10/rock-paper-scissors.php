@@ -1,18 +1,12 @@
 <?php
-//determine element game names
-$rock = "rock"; //beats $scissors, $lizard
-$paper = "paper"; //beats $rock, $spock
-$scissors = "scissors"; //beats $paper, $lizard
-$lizard = "lizard"; //beats $paper, $spock
-$spock = "spock"; //beats $rock, $scissors
 
 //create element pool
 $elements = [
-    $rock,
-    $paper,
-    $scissors,
-    $lizard,
-    $spock
+    $rock = "rock", //beats $scissors, $lizard
+    $paper = "paper", //beats $rock, $spock
+    $scissors = "scissors", //beats $paper, $lizard
+    $lizard = "lizard", //beats $paper, $spock
+    $spock = "spock", //beats $rock, $scissors
 ];
 
 //create table which determines what can beat what
@@ -56,4 +50,3 @@ if ($computer0 === $userSelection || $computer1 === $userSelection) {
 } elseif ($user0 === $computerSelection || $user1 === $computerSelection) {
     echo "you beat computer's $computerSelection with your $userSelection";
 }
-
