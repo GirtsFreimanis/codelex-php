@@ -36,10 +36,7 @@ if (in_array($userSelection, $elements) === false) {
 if ($userSelection === $computerSelection) {
     echo "it's a tie!!";
     exit;
-}
-
-//check if value is in table array which is associative
-if (in_array($userSelection, array_values($table[$computerSelection]))) {
+} elseif (in_array($userSelection, array_values($table[$computerSelection]))) {
     echo "computer beat your $userSelection with $computerSelection";
 } elseif (in_array($computerSelection, array_values($table[$userSelection]))) {
     echo "you beat computer's $computerSelection with your $userSelection";
