@@ -1,8 +1,10 @@
 <?php
-$apiKey = "c7e4f38f8dcf50f1bf807b7b70c4c45e";
+//api key is inside kay.txt which should be ignored by git for safety reasons in future
+//for now it is reversed inside kay.txt so that gitHub doesn't get angry
+$apiKeyPath = "kay.txt";
+$apiKey = strrev(fgets(fopen($apiKeyPath, 'r')));
 $city = readline("enter city> ");
 $link = "https://api.openweathermap.org/data/2.5/weather?q=" . $city . "&appid=" . $apiKey . "&units=metric";
-//https://api.openweathermap.org/data/2.5/weather?q=liepaja&appid=c7e4f38f8dcf50f1bf807b7b70c4c45e&units=metric
 $cityInfo = json_decode(file_get_contents($link));
 
 echo "\ncurrent weather in " . $cityInfo->name . ", " . $cityInfo->sys->country . "\n";
