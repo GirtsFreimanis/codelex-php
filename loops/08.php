@@ -6,7 +6,7 @@ class NumberSquare
     {
         for ($i = $min; $i < $max + 1; $i++) {
             for ($j = 0; $j < $max; $j++) {
-                echo $i + $j > 5 ? $i + $j - 5 : $i + $j;
+                echo $i + $j > $max ? $i + $j - $max : $i + $j;
             }
             echo PHP_EOL;
         }
