@@ -6,6 +6,7 @@ namespace App\Controllers;
 
 use App\Models\Article;
 use App\Views\Response;
+use Carbon\Carbon;
 
 class ArticleController
 {
@@ -13,9 +14,21 @@ class ArticleController
     {
         return new Response("articles.index", [
             "articles" => [
-                new Article("News 1", "something happened"),
-                new Article("News 2", "something else happened"),
-                new Article("News 3", "something happened somewhere else")
+                new Article(
+                    "News 1",
+                    Carbon::createFromFormat('Y-m-d H:i:s', '2023-01-14 01:24:05'),
+                    "something happened"
+                ),
+                new Article(
+                    "News 2",
+                    Carbon::createFromFormat('Y-m-d H:i:s', '2023-06-07 12:02:59'),
+                    "something else happened"
+                ),
+                new Article(
+                    "News 3",
+                    Carbon::createFromFormat('Y-m-d H:i:s', '2023-08-09 17:55:11'),
+                    "something happened somewhere else"
+                )
             ]
         ]);
     }
@@ -26,7 +39,7 @@ class ArticleController
         if (isset($article))
             return new Response(
                 "articles.show", [
-                "article" => new Article($article->getTitle(), $article->getDescription())
+                "article" => new Article($article->getTitle(), $article->getDate(), $article->getDescription())
             ]);
         else {
             return new Response(

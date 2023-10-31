@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+{% include'navbar.twig' %}
+<div class="article-container">
+    {% for key, article in articles %}
+        <h2 class="article-title"><a href="/articles/{{ key }}">{{ article.title }} | date: {{ article.date }}</a></h2>
+    {% endfor %}
+</div>
+</body>
+</html>
