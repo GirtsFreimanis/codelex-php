@@ -51,6 +51,7 @@ switch ($routeInfo[0]) {
 
         if ($response->getViewName() === "articles.show") {
             $article = $response->getData()["article"];
+            //var_dump($article);
             echo $twig->render('show.twig', ["article" => $article]);
         }
 }

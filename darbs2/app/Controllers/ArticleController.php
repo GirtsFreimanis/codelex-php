@@ -15,17 +15,17 @@ class ArticleController
         return new Response("articles.index", [
             "articles" => [
                 new Article(
-                    "News 1",
+                    "Breaking news",
                     Carbon::createFromFormat('Y-m-d H:i:s', '2023-01-14 01:24:05'),
                     "something happened"
                 ),
                 new Article(
-                    "News 2",
+                    "Astonishing news",
                     Carbon::createFromFormat('Y-m-d H:i:s', '2023-06-07 12:02:59'),
                     "something else happened"
                 ),
                 new Article(
-                    "News 3",
+                    "Regular news",
                     Carbon::createFromFormat('Y-m-d H:i:s', '2023-08-09 17:55:11'),
                     "something happened somewhere else"
                 )
