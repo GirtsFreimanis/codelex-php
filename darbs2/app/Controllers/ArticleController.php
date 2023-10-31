@@ -44,7 +44,7 @@ class ArticleController
         else {
             return new Response(
                 "articles.show", [
-                "article" => new Article("Article not found!", "")
+                "article" => new Article("Article not found!", Carbon::now(), "")
             ]);
         }
     }
